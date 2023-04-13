@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+$primary-font :"Roboto",
+sans-serif;
+$transition : all 0.3s linear;
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    background: hsl(210, 36%, 96%);
+    color: hsl(209, 61%, 16%);
+    line-height: 1.5;
+    font-size: 0.875rem
+}
+
+.sidebar-toggle {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    margin-top: 1%;
+    position: fixed;
+    right: 1%;
+    cursor: pointer;
+    font-size: 2rem;
+    background-color: transparent;
+    border-color: transparent;
+    color: hsl(205, 89%, 70%);
+    transition: all 0.3s linear;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+
+.sidebar-toggle:hover {
+    color: hsl(205, 90%, 76%);
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+ul {
+    list-style-type: none;
+
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+    background: white;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    row-gap: 1rem;
+    box-shadow: darkred;
+    transition: all 0.3s linear;
+    transform: translate(-100%);
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+
+.close-btn {
+    width: 10%;
+    color: hsl(205, 78%, 60%);
+    margin-left: 25%;
+    color: darkred;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    background-color: transparent;
+    border: transparent
+}
+
+.close-btn i {
+    font-size: 1.7rem;
+}
+
+.close-btn:hover {
+    color: hsl(360, 71%, 66%);
+    transform: rotate(90deg);
+}
+
+.links a {
+    display: block;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    transition: all 0.3s linear;
+}
+
+.links a:hover {
+    background: hsl(205, 86%, 81%);
+    color: hsl(205, 78%, 60%);
+    padding-left: 1.75rem;
+}
+
+.logo {
+    justify-self: center;
+    height: 40px;
+}
+
+.social-icons {
+    justify-self: center;
+    display: flex;
+    padding-bottom: 2rem;
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    color: hsl(205, 78%, 60%);
+    transition: all 0.3s linear;
+}
+
+.social-icons a:hover {
+    color: hsl(205, 86%, 17%);
+}
+
+.show-sidebar {
+    transform: translate(0);
+}
+
+@media screen and (min-width: 676px) {
+    .sidebar {
+        width: 400px;
+    }
+}
